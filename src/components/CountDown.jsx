@@ -5,12 +5,10 @@ import React, { useState, useEffect, useContext } from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import FilmContext from "../contexts/FilmContext";
 
-// TODO - edit to take the actual values from the API
-
 const CountdownTimer = () => {
   const filmDetails = useContext(FilmContext)
-  const [eventName, setEventName] = useState(filmDetails.name);
-  const [eventDate, setEventDate] = useState(filmDetails.releaseDate);
+  const [eventName, setEventName] = useState('Wake Up Dead Man: A Knives Out Mystery');
+  const [eventDate, setEventDate] = useState('December 12, 2025 7:00:00 pm');
   const [countdownStarted, setCountdownStarted] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState(0);
 
@@ -18,7 +16,7 @@ const CountdownTimer = () => {
     if (countdownStarted && eventDate) {
       const countdownInterval = setInterval(() => {
         const currentTime = new Date().getTime();
-        const eventTime = new Date(filmDetails.releaseDate).getTime();
+        const eventTime = new Date(eventDate).getTime();
         let remainingTime = eventTime - currentTime;
 
         if (remainingTime <= 0) {
@@ -60,28 +58,36 @@ const CountdownTimer = () => {
     return (
         <Card style={{backgroundColor:"black"}}>
             <Row> 
-                <Col>
+                <Col sm={3}>
                     <Card >
-                        <p style={{fontFamily: "Constantina"}}>{days.toString().padStart(2, "0")}</p>
-                        <p style={{fontFamily: "Constantina"}}>Days</p>
+                        <h3 style={{fontFamily: "Constantina"}}>{days.toString().padStart(2, "0")}</h3>
+                        {
+                          //<h4 style={{fontFamily: "Constantina"}}>D</h4>
+                        }
                     </Card>
                 </Col>
-                <Col >
+                <Col sm={3}>
                     <Card>
-                        <p style={{fontFamily: "Constantina"}}>{hours.toString().padStart(2, "0")}</p>
-                        <p style={{fontFamily: "Constantina"}}>Hours</p>
+                        <h3 style={{fontFamily: "Constantina"}}>{hours.toString().padStart(2, "0")}</h3>
+                        {
+                          //<h4 style={{fontFamily: "Constantina"}}>H</h4>
+                        }
                     </Card>
                 </Col>
-                <Col >
+                <Col sm={3}>
                     <Card>
-                        <p style={{fontFamily: "Constantina"}}>{minutes.toString().padStart(2, "0")}</p>
-                        <p style={{fontFamily: "Constantina"}}>Minutes</p>
+                        <h3 style={{fontFamily: "Constantina"}}>{minutes.toString().padStart(2, "0")}</h3>
+                        {
+                          //<h4 style={{fontFamily: "Constantina"}}>M</h4>
+                        }
                     </Card>
                 </Col>
-                <Col>
+                <Col sm={3}>
                     <Card>
-                        <p style={{fontFamily: "Constantina"}}>{seconds.toString().padStart(2, "0")}</p>
-                        <p style={{fontFamily: "Constantina"}}>Seconds</p>
+                        <h3 style={{fontFamily: "Constantina"}}>{seconds.toString().padStart(2, "0")}</h3>
+                        {
+                          //<h4 style={{fontFamily: "Constantina"}}>S</h4>
+                        }
                     </Card>
                 </Col>  
             </Row>
@@ -92,9 +98,8 @@ const CountdownTimer = () => {
   useEffect(() => handleSetCountdown(), [])
   return (
     <div className="countdown-timer-container">
-      <h3 className="countdown-date">
-        Release Party {countdownStarted && formatDate(eventDate)} at 7:00 PM
-      </h3>
+      <h2 className="countdown-date" style={{fontFamily: "Constantina"}}>Release Party</h2>
+      <h3 style={{fontFamily: "Constantina"}}>{countdownStarted && formatDate(eventDate)} at 7:00 PM</h3>
         <>
           {formatTime(timeRemaining)}
         </>

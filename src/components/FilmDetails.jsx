@@ -1,18 +1,35 @@
 import PageNavbar from "./PageNavbar"
-import { Container } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
+import { useContext } from "react"
+import FilmContext from "../contexts/FilmContext"
 
 export default function FilmDetails (props) {
+    const filmDetails = useContext(FilmContext)
+
     return <div>
         <PageNavbar />
         <Container fluid style={{marginTop: 25}}>
-            <h1>Film Details</h1>
+            <Row>
+                <Col style={{marginTop: 30}}>
+                    <h1 style={{alignContent:"center"}}>{filmDetails.title}</h1>
+                    <br/>
+                    <h2>Directed by {filmDetails.director}</h2>
+                    <h3>Release Date: {filmDetails.releaseDate}</h3>
+                    <h4>Rating: PG-13</h4>
+                    <br/>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/eHM1K1JByBI" title="YouTube video player" allowFullScreen></iframe>
+                    <br/>
+                    <br/>
+                    <p>{filmDetails.filmDescription}</p>
+                    <br/>
+                    
+                </Col>
+                <Col xs={4} style={{marginTop: 30}}>
+                    <img alt="Film Poster" src={filmDetails.posterImg} width="365" height="548" style={{margin: 20}}/>
+                </Col>
+            </Row>
 
-        {
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/eHM1K1JByBI" title="YouTube video player" allowFullScreen></iframe>
-
-            // currently, I'm getting weird errors for the video that make troubleshooting other components difficult. 
-            // the video does work, but for the time being, I'm going to keep it commented out until i have time to fix it
-        }
+        <p>I do not own the rights to this film, this is a fictional event that has no assoication to Netflix</p>
 
         </Container>
     </div>
