@@ -33,7 +33,7 @@ export default function Bios (props) {
                 enableArrowNavigation={true}
                 displayScrollbar={true}/>
 
-            <p>Info pulled from sources including IMDB and Wikipedia</p>
+            <p style={{fontFamily: "Constantina"}}>Info pulled from sources including IMDB and Wikipedia</p>
         </Container>
         
     </div>

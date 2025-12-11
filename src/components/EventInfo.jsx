@@ -39,7 +39,7 @@ export default function EventInfo (props) {
                         <Card>
                             <Card.Text style={{fontFamily: "Constantina"}}>Location:</Card.Text>
                             <Card.Text style={{fontFamily: "Constantina"}}><strong>Music Box Theater</strong></Card.Text>
-                            <Card.Img alt="Venue Img" src={filmDetails.musicBoxImg} width="300" height="200"/>
+                            <Card.Img alt="Venue Image" src={filmDetails.musicBoxImg} width="300" height="200"/>
                             <Card.Text style={{fontFamily: "Constantina"}}>3733 N Southport Ave, Chicago, IL,  60613</Card.Text>
                         </Card>
                     </Card>

@@ -12,17 +12,17 @@ export default function Ticket(props){
     }
 
     return <Card>
-        <Card.Img src={"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flandmarktheatre.org%2Fwp-content%2Fuploads%2F2018%2F12%2Fticket.jpg&f=1&nofb=1&ipt=064915421d90897343ab76d5b8f7ff73ca571d891d2ea3051c91b62186ff0d07"}/>
+        <Card.Img src={"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flandmarktheatre.org%2Fwp-content%2Fuploads%2F2018%2F12%2Fticket.jpg&f=1&nofb=1&ipt=064915421d90897343ab76d5b8f7ff73ca571d891d2ea3051c91b62186ff0d07"} alt={"Ticket image"}/>
 
         {tickets === 1 && (
-            <Card.Text>{tickets} ticket reserved</Card.Text>
+            <Card.Text style={{fontFamily: "Constantina"}}>{tickets} ticket reserved</Card.Text>
         )}
 
         {tickets !== 1 && (
-            <Card.Text>{tickets} ticket(s) reserved</Card.Text>
+            <Card.Text style={{fontFamily: "Constantina"}}>{tickets} ticket(s) reserved</Card.Text>
         )}
         
-        <Card.Text>Please arrive by 7:30 pm for the screening</Card.Text>
+        <Card.Text style={{fontFamily: "Constantina"}}>Please arrive by 7:30 pm for the screening</Card.Text>
 
         <Button onClick={handleCancel} variant="secondary">Cancel</Button>
 

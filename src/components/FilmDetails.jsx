@@ -11,16 +11,16 @@ export default function FilmDetails (props) {
         <Container fluid style={{marginTop: 25}}>
             <Row>
                 <Col style={{marginTop: 30}}>
-                    <h1 style={{alignContent:"center"}}>{filmDetails.title}</h1>
+                    <h1 style={{alignContent:"center", fontFamily: "Constantina"}}>{filmDetails.title}</h1>
                     <br/>
-                    <h2>Directed by {filmDetails.director}</h2>
-                    <h3>Release Date: {filmDetails.releaseDate}</h3>
-                    <h4>Rating: PG-13</h4>
+                    <h2 style={{fontFamily: "Constantina"}}>Directed by {filmDetails.director}</h2>
+                    <h3 style={{fontFamily: "Constantina"}}>Release Date: {filmDetails.releaseDate}</h3>
+                    <h4 style={{fontFamily: "Constantina"}}>Rating: PG-13</h4>
                     <br/>
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/eHM1K1JByBI" title="YouTube video player" allowFullScreen></iframe>
                     <br/>
                     <br/>
-                    <p>{filmDetails.filmDescription}</p>
+                    <p style={{fontFamily: "Constantina"}}>{filmDetails.filmDescription}</p>
                     <br/>
                     
                 </Col>
